@@ -3,12 +3,12 @@ Uplink role
 
 This role facilitates the configuration of uplink failure detection feature attributes, and is abstracted for dellos10. It specifically enables configuration of  association between upstream and downstream interfaces known as uplink-state group.
 
-The dellos-uplink role requires an SSH connection for connectivity to a Dell EMC Networking device. You can use any of the built-in OS connection variables .
+The dellos_uplink role requires an SSH connection for connectivity to a Dell EMC Networking device. You can use any of the built-in OS connection variables .
 
 Installation
 ------------
 
-    ansible-galaxy install Dell-Networking.dellos-uplink
+    ansible-galaxy install Dell-Networking.dellos_uplink
 
 Role variables
 --------------
@@ -55,14 +55,14 @@ Ansible Dell EMC Networking roles require connection information to establish co
 Dependencies
 ------------
 
-The *dellos-uplink* role is built on modules included in the core Ansible code. These modules were added in Ansible version 2.2.0.
+The *dellos_uplink* role is built on modules included in the core Ansible code. These modules were added in Ansible version 2.2.0.
 
 Example playbook
 ----------------
 
-This example uses the *dellos-uplink role* to completely set the uplink sate group instance, and upstream, downstream interfaces. It creates a *hosts* file with the switch details and corresponding variables. The hosts file should define the *ansible_network_os* variable with corresponding Dell EMC networking OS name. 
+This example uses the *dellos_uplink role* to completely set the uplink sate group instance, and upstream, downstream interfaces. It creates a *hosts* file with the switch details and corresponding variables. The hosts file should define the *ansible_network_os* variable with corresponding Dell EMC networking OS name. 
 
-When *dellos_cfg_generate* is set to true, the variable generates the configuration commands as a .part file in *build_dir* path. By default, the variable is set to false. The uplink role writes a simple playbook that only references the *dellos-uplink* role. By including the role, you automatically get access to all of the tasks to configure uplink features. 
+When *dellos_cfg_generate* is set to true, the variable generates the configuration commands as a .part file in *build_dir* path. By default, the variable is set to false. The uplink role writes a simple playbook that only references the *dellos_uplink* role. By including the role, you automatically get access to all of the tasks to configure uplink features. 
 
 **Sample hosts file**
  
@@ -100,7 +100,7 @@ When *dellos_cfg_generate* is set to true, the variable generates the configurat
 
     - hosts: leaf1
       roles:
-         - Dell-Networking.dellos-uplink
+         - Dell-Networking.dellos_uplink
 
 **Run**
 
